@@ -15,7 +15,7 @@ public class TorpedoStore {
   private int torpedoCount = 0;
 
   private Random generator = new Random();
-
+  // Requested cat GIF -> https://media.tenor.com/_WZy7E7hoTcAAAAM/cat-smile.gif
   public TorpedoStore(int numberOfTorpedos){
     this.torpedoCount = numberOfTorpedos;
 
@@ -42,7 +42,7 @@ public class TorpedoStore {
 
     if (r >= FAILURE_RATE) {
       // successful firing
-      this.torpedoCount -= numberOfTorpedos;
+      this.torpedoCount = this.torpedoCount - numberOfTorpedos;
       success = true;
     } else {
       // simulated failure
